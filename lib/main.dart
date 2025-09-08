@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              EventService().logEvent(AnalyticsEvent.faqQuestionOpened(question: 'question1'));
+              EventService().logEvent(AnalyticsEvent.onboardStepOpened(stepNumber: 1));
             },
             child: Text('Send event'),
           ),

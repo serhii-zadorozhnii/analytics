@@ -1,16 +1,22 @@
 # analytics
 
-A new Flutter project.
-
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Сервис для отправки аналитики для flutter проэктов.
+EventService - должен быть добавлень к DI зависимостям.
+Все взаимодействия по приложению должны происходить через него.
+В main необходимо инициализировать EventService через метод init()
+В init() передаються параметри для управления логированием и
+также все сервисы, в которые необходимо отправлять ивенты.
 
-A few resources to get you started if this is your first Flutter project:
+Все сервисы для отправки ивентов, например firebase и amplitude должны
+быть реализрованы дочерними класами от BaseEventService.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ивенты для приложения находяться в models/AnalyticsEvent.dart
+Ивенты имеют параметр title, он задаеться дефолтным значением в конструкторе, 
+который не должен меняться в приложении (этот параметр задаеться только через @Default())
+Для заполнения всех ивентов рекомендовано использовать AI:
+1. Просим PM подготовить таблицу со всеми ивентами
+2. Даем AI весь список ивентов с параметрами
+3. Предоставляем AI пример уже реализованных ивентов
+4. Получаем полностью заполенный class AnalyticsEvent со всеми нужными конструкторами

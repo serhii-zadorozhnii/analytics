@@ -12,7 +12,7 @@ class FirebaseEventService implements BaseEventService {
   Future<void> logEvent(AnalyticsEvent event) async {
     final params = event.toJson();
     await _analytics.logEvent(
-      name: event.title,
+      name: event.eventTitle,
       parameters: params.isNotEmpty ? params.cast<String, Object>() : null,
     );
   }

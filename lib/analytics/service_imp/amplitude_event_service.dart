@@ -17,7 +17,7 @@ class AmplitudeEventService implements BaseEventService {
   @override
   Future<void> logEvent(AnalyticsEvent event) async {
     final params = event.toJson();
-    _amplitude.track(BaseEvent(event.title, eventProperties: params.isNotEmpty ? params : null));
+    _amplitude.track(BaseEvent(event.eventTitle, eventProperties: params.isNotEmpty ? params : null));
   }
 
   @override
