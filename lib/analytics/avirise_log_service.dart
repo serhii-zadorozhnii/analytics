@@ -4,10 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
 enum _AviriseLogConstant {
-  appID('flutter-air-printer'),
+  appID('app-id'),
   logEventEndpoint('logevent'),
   logAdEndpoint('logad'),
-  host('http://176.223.128.80:3006');
+  host('http://domain');
 
   const _AviriseLogConstant(this.value);
 
