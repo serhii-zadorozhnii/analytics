@@ -1,7 +1,9 @@
 import 'package:analytics/analytics/models/analytics_event.dart';
+import 'package:analytics/analytics/models/user_properties.dart';
 import 'package:analytics/analytics/service_imp/base_event_service.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 
 class FirebaseEventService implements BaseEventService {
   FirebaseEventService();
@@ -19,6 +21,13 @@ class FirebaseEventService implements BaseEventService {
 
   @override
   Future<void> init({bool loggingEnabled = true, bool consoleLoggingEnabled = kDebugMode}) async {
-    //no need
+    if (consoleLoggingEnabled) {
+      Logger().i('[FirebaseEventService]: init');
+    }
+  }
+
+  @override
+  Future<void> identifyProperties(UserProperties properties, {bool setOnce = false}) {
+    return Future.value();
   }
 }
